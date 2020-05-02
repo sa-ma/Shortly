@@ -1,0 +1,57 @@
+// Colors
+
+// Primary
+$color-cyan: hsl(180, 66%, 49%);
+$color-dark-violet: hsl(257, 27%, 26%);
+
+// Secondary colors
+$color-red: hsl(0, 87%, 67%);
+
+//Neutral
+$color-gray: hsl(0, 0%, 75%);
+$color-grayish-violer: hsl(257, 7%, 63%);
+$color-very-dark-blue: hsl(255, 11%, 22%);
+$color-very-dark-violet: hsl(260, 8%, 14%);
+
+// Breakpoints
+$breakpoint-ipad: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 499px;
+
+// Mixins
+@mixin sm {
+  @media (min-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$breakpoint-ipad}) {
+    @content;
+  }
+}
+
+//  Default Styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
