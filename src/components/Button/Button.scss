@@ -1,0 +1,22 @@
+@import '../../assets/sass/base';
+
+.btn {
+  &:link,
+  &:visited {
+    display: block;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 100px;
+    background-color: $color-cyan;
+    text-decoration: none;
+    transition: background-color 0.5s;
+    @include lg {
+      padding: 1rem 3rem;
+    }
+  }
+  &:hover {
+    background-color: darken($color-cyan, 5%);
+  }
+}

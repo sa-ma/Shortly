@@ -9,7 +9,7 @@ $color-red: hsl(0, 87%, 67%);
 
 //Neutral
 $color-gray: hsl(0, 0%, 75%);
-$color-grayish-violer: hsl(257, 7%, 63%);
+$color-grayish-violet: hsl(257, 7%, 63%);
 $color-very-dark-blue: hsl(255, 11%, 22%);
 $color-very-dark-violet: hsl(260, 8%, 14%);
 
@@ -48,10 +48,32 @@ $breakpoint-mobile: 499px;
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 1.8rem;
+}
+
+.u-header-top {
+  margin-top: 2rem;
+  @include lg {
+    margin: 0;
+  }
+}
+.u-pull-right {
+  @include lg {
+    margin-left: auto;
+  }
+}
+
+@keyframes houdini {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,110 @@
+@import '../../assets/sass/base';
+
+.header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 1rem;
+  @include lg {
+    padding: 6rem 10rem;
+  }
+  &__logo {
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+  }
+
+  &__menu__button {
+    height: fit-content;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    @include lg {
+      display: none;
+    }
+  }
+  &__navigation {
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    width: 100%;
+    display: none;
+    @include lg {
+      position: relative;
+      top: 0;
+      display: block;
+    }
+    &__menu {
+      list-style: none;
+      margin: 0 4rem;
+      background-color: $color-dark-violet;
+      padding: 3rem 1.5rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: houdini 1s;
+      @include lg {
+        flex-direction: row;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        margin-left: 3rem;
+        justify-content: flex-start;
+        border-radius: 0;
+      }
+      &__link {
+        padding: 0.5rem 0;
+        @include lg {
+          padding: 0 2rem;
+        }
+        &__item {
+          &:link,
+          &:visited {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            display: block;
+            font-weight: 700;
+            padding: 1rem 0;
+            transform: translateX(0);
+            transition: transform 0.5s;
+            width: max-content;
+            margin: 0 auto;
+            @include lg {
+              color: $color-grayish-violet;
+              padding: 0;
+            }
+          }
+          &:hover {
+            transform: translateX(2rem);
+            color: $color-very-dark-violet;
+            @include lg {
+              transform: translateX(1rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.login {
+  &::before {
+    content: '';
+    display: block;
+    margin: 2rem 0;
+    border-top: 0.5px solid $color-gray;
+    @include lg {
+      display: none;
+    }
+  }
+}
+
+.signup {
+  @include lg {
+    margin-top: -1rem;
+  }
+}
