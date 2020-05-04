@@ -60,7 +60,7 @@ body {
 .u-header-top {
   margin-top: 2rem;
   @include lg {
-    margin: 0;
+    margin: -1rem;
   }
 }
 .u-pull-right {

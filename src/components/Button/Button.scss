@@ -19,4 +19,12 @@
   &:hover {
     background-color: darken($color-cyan, 5%);
   }
+  &-hero {
+    max-width: 50%;
+    width: 100&;
+    margin: 0 auto;
+    @include lg {
+      margin: 0;
+    }
+  }
 }

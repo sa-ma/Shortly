@@ -1,0 +1,48 @@
+@import '../../assets/sass/base';
+
+.hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include lg {
+    flex-direction: row-reverse;
+  }
+  &__image__container {
+    padding: 3rem;
+    width: 100%;
+    overflow: hidden;
+    @include lg {
+      padding: 0;
+    }
+    img {
+      width: 150%;
+      display: block;
+      margin: 0 auto;
+      @include lg {
+        width: 100%;
+        margin-right: -10rem;
+      }
+    }
+  }
+  &__description {
+    text-align: center;
+    padding: 3rem;
+    @include lg {
+      text-align: left;
+      padding: 6rem 0 0 10rem;
+    }
+    &__header {
+      color: $color-dark-violet;
+      @include lg {
+        font-size: 6rem;
+      }
+    }
+    &__subtitle {
+      color: $color-gray;
+      margin-bottom: 3rem;
+      @include lg {
+        font-size: 2rem;
+      }
+    }
+  }
+}
