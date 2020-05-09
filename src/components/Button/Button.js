@@ -1,11 +1,15 @@
 import React from 'react';
 import './Button.scss';
 
-const Button = ({ title, prop }) => {
+const Button = ({ title, action, variant }) => {
   return (
-    <a href="#action" className={`btn ${prop ? prop : ''}`}>
+    <button
+      onClick={action || null}
+      type={`${action ? 'button' : 'submit'}`}
+      className={`btn ${variant || ''}`}
+    >
       {title}
-    </a>
+    </button>
   );
 };
 

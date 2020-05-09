@@ -1,6 +1,6 @@
 @import '../../assets/sass/base';
 .link {
-  margin: 8rem 1rem 1rem;
+  margin: -10rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   padding: 3rem 2rem;
@@ -11,12 +11,15 @@
     flex-direction: row;
     background: $color-dark-violet
       url('../../assets/images/bg-shorten-desktop.svg') no-repeat;
-    margin: 3rem 10rem;
+    margin: -10rem 10rem 2rem;
     padding: 4.5rem;
     background-size: cover;
   }
   &__group {
-    width: 80%;
+    width: 100%;
+    @include lg {
+      width: 80%;
+    }
   }
   &__input {
     padding: 2rem;
@@ -41,27 +44,10 @@
     font-style: italic;
     font-size: 1.2rem;
   }
-  &__btn {
-    color: white;
-    font-weight: 700;
-    margin-top: 2rem;
-    padding: 2rem;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    background-color: $color-cyan;
-    outline: none;
-    font-size: 2.3rem;
-    cursor: pointer;
-    transition: all 0.5s;
-    @include lg {
-      margin-top: 0;
-      margin-left: 2rem;
-      padding: 0 3rem;
-      max-height: 5.8rem;
-    }
-    &:hover {
-      background-color: darken($color-cyan, 5%);
-      transform: translateY(3px);
-    }
+
+  &-container {
+    background-color: #eee;
+    margin-top: 15rem;
+    padding: 2rem 0;
   }
 }

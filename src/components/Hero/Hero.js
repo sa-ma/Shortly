@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button';
+import LinkButton from '../LinkButton';
 import HeroImage from '../../assets/images/illustration-working.svg';
 import './Hero.scss';
 
@@ -17,7 +17,7 @@ const Hero = () => {
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
-        <Button title="Get Started" prop="btn-hero" />
+        <LinkButton title="Get Started" prop="link-btn-hero" />
       </div>
     </div>
   );

@@ -1,0 +1,48 @@
+@import '../../assets/sass/base';
+
+.link__output {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  margin: 2rem;
+  padding: 1rem 0;
+  @include lg {
+    flex-direction: row;
+    margin: 1rem 10rem;
+    padding: 2rem;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    transition: all 0.5s;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__address {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid $color-gray;
+    &:link,
+    &:visited {
+      color: black;
+    }
+    @include lg {
+      border: 0;
+      flex: 2;
+      padding: 1rem;
+    }
+  }
+  &__result {
+    padding: 1rem 2rem;
+
+    &:link,
+    &:visited {
+      color: $color-cyan;
+    }
+    @include lg {
+      padding: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}

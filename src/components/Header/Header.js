@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MdMenu } from 'react-icons/md';
-import Button from '../Button';
+import LinkButton from '../LinkButton';
 import Logo from '../../assets/images/logo.svg';
 import './Header.scss';
 
@@ -54,7 +54,7 @@ const Header = () => {
             </a>
           </li>
           <li className="u-header-top signup">
-            <Button title="Sign up" />
+            <LinkButton title="Sign up" />
           </li>
         </ul>
       </nav>

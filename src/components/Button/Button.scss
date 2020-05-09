@@ -1,28 +1,36 @@
 @import '../../assets/sass/base';
 
 .btn {
-  &:link,
-  &:visited {
-    display: block;
-    color: white;
-    font-weight: 700;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 100px;
-    background-color: $color-cyan;
-    text-decoration: none;
-    transition: background-color 0.5s;
-    @include lg {
-      padding: 1rem 3rem;
-    }
+  color: white;
+  font-weight: 700;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: $color-cyan;
+  outline: none;
+  font-size: 2.3rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  @include lg {
+    margin-top: 0;
+    margin-left: 2rem;
+    padding: 0 3rem;
+    max-height: 5.8rem;
   }
   &:hover {
     background-color: darken($color-cyan, 5%);
+    transform: translateY(3px);
   }
-  &-hero {
-    max-width: 50%;
-    width: 100&;
-    margin: 0 auto;
+  &-copy {
+    margin: 1rem 2rem;
+    @include lg {
+      margin: 0;
+    }
+  }
+  &-copied {
+    background-color: $color-dark-violet !important;
+    margin: 1rem 2rem;
     @include lg {
       margin: 0;
     }
