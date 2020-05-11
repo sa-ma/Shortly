@@ -1,0 +1,103 @@
+@import '../../assets/sass/base';
+
+.blurb {
+  padding: 2rem;
+  background-color: #eee;
+  @include lg {
+    padding: 10rem;
+  }
+  &__title {
+    color: $color-dark-violet;
+    font-size: 3rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  &__subtitle {
+    color: $color-gray;
+    text-align: center;
+    @include lg {
+      width: 40%;
+      margin: 2rem auto;
+    }
+  }
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 5rem;
+    }
+    &__item {
+      background-color: #fff;
+      margin: 5rem 0;
+      padding: 2rem 3rem;
+      text-align: center;
+      position: relative;
+      @include lg {
+        margin: 5rem 2rem;
+        text-align: left;
+        width: fit-content;
+      }
+      &:first-child {
+        margin-top: 10rem;
+        @include lg {
+          margin-top: 5rem;
+        }
+      }
+      &:not(:last-child)::after {
+        content: '';
+        width: 1rem;
+        height: 8rem;
+        background-color: $color-cyan;
+        display: block;
+        position: absolute;
+        bottom: -8rem;
+        left: 49%;
+        @include lg {
+          bottom: 0;
+          left: 100%;
+          width: 8rem;
+          height: 1rem;
+          top: 50%;
+        }
+      }
+      &__title {
+        color: $color-dark-violet;
+        margin: 1rem;
+        @include lg {
+          margin: 1rem 0;
+        }
+      }
+      &__content {
+        color: $color-gray;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+      }
+
+      &-2 {
+        @include lg {
+          transform: translateY(4rem);
+        }
+      }
+      &-3 {
+        @include lg {
+          transform: translateY(8rem);
+        }
+      }
+    }
+  }
+}
+.u-circle-container {
+  background-color: $color-dark-violet;
+  padding: 2rem;
+  width: fit-content;
+  border-radius: 50%;
+  margin: -6rem auto 2rem;
+  @include lg {
+    margin: -6rem 0 2rem;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
