@@ -1,4 +1,4 @@
-@import '../../assets/sass/base';
+@import '../../assets/sass/main';
 
 .blurb {
   padding: 2rem;
@@ -86,18 +86,5 @@
         }
       }
     }
-  }
-}
-.u-circle-container {
-  background-color: $color-dark-violet;
-  padding: 2rem;
-  width: fit-content;
-  border-radius: 50%;
-  margin: -6rem auto 2rem;
-  @include lg {
-    margin: -6rem 0 2rem;
-  }
-  img {
-    vertical-align: middle;
   }
 }

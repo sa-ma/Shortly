@@ -68,6 +68,19 @@ body {
     margin-left: auto;
   }
 }
+.u-circle-container {
+  background-color: $color-dark-violet;
+  padding: 2rem;
+  width: fit-content;
+  border-radius: 50%;
+  margin: -6rem auto 2rem;
+  @include lg {
+    margin: -6rem 0 2rem;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
 
 @keyframes houdini {
   0% {
@@ -75,5 +88,23 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.login {
+  &::before {
+    content: '';
+    display: block;
+    margin: 2rem 0;
+    border-top: 0.5px solid $color-gray;
+    @include lg {
+      display: none;
+    }
+  }
+}
+
+.signup {
+  @include lg {
+    margin-top: -1rem;
   }
 }

@@ -1,4 +1,4 @@
-@import '../../assets/sass/base';
+@import '../../assets/sass/main';
 
 .header {
   width: 100%;
@@ -88,23 +88,5 @@
         }
       }
     }
-  }
-}
-
-.login {
-  &::before {
-    content: '';
-    display: block;
-    margin: 2rem 0;
-    border-top: 0.5px solid $color-gray;
-    @include lg {
-      display: none;
-    }
-  }
-}
-
-.signup {
-  @include lg {
-    margin-top: -1rem;
   }
 }
