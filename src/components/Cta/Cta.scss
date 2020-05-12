@@ -1,0 +1,23 @@
+@import '../../assets/sass/base';
+
+.cta {
+  background: $color-dark-violet url('../../assets/images/bg-boost-mobile.svg')
+    top right no-repeat;
+  padding: 9rem 1rem;
+  margin: 0;
+  text-align: center;
+  @include lg {
+    padding: 6rem 1rem;
+    background: $color-dark-violet
+      url('../../assets/images/bg-boost-desktop.svg') top right no-repeat;
+  }
+
+  &__header {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    @include lg {
+      font-size: 4rem;
+    }
+  }
+}

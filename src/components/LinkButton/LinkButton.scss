@@ -7,7 +7,6 @@
     color: white;
     font-weight: 700;
     text-align: center;
-    padding: 1rem;
     border-radius: 100px;
     background-color: $color-cyan;
     text-decoration: none;
@@ -23,8 +22,15 @@
     max-width: 50%;
     width: 100&;
     margin: 0 auto;
+    padding: 1rem;
     @include lg {
       margin: 0;
     }
+  }
+  &-cta {
+    padding: 1.5rem;
+    width: 100%;
+    width: 20rem;
+    margin: 1rem auto;
   }
 }
