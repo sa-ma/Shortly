@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import LinkInput from './components/LinkInput';
 import Blurb from './components/Blurb';
 import Cta from './components/Cta';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <LinkInput />
       <Blurb />
       <Cta />
+      <Footer />
     </React.Fragment>
   );
 }
