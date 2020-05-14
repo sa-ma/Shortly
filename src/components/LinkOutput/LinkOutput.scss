@@ -5,8 +5,9 @@
   flex-direction: column;
   background-color: white;
   border-radius: 8px;
-  margin: 2rem;
+  margin: 2rem 1rem;
   padding: 1rem 0;
+  transition: all 0.5s;
   @include lg {
     flex-direction: row;
     margin: 1rem 10rem;
@@ -23,10 +24,6 @@
   &__address {
     padding: 1rem 2rem;
     border-bottom: 1px solid $color-gray;
-    &:link,
-    &:visited {
-      color: black;
-    }
     @include lg {
       border: 0;
       flex: 2;

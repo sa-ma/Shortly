@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import LinkOutput from '../LinkOutput';
 import Button from '../Button';
 import './LinkInput.scss';
@@ -6,15 +7,27 @@ import './LinkInput.scss';
 const LinkInput = () => {
   const [link, setLink] = useState('');
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
+  const [data, setData] = useState([]);
   const [copyState, setCopyState] = useState(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (!link) {
       setError('Please add a link');
       document.querySelector('.link__input').classList.add('link__input-error');
-    } else {
-      setError('');
+      return;
+    }
+    try {
+      setLoading(true);
+      const result = await axios.post('https://rel.ink/api/links/', {
+        url: link,
+      });
+      setData([result.data, ...data]);
+      setLoading(false);
+    } catch (error) {
+      setError('Error shortening link. Try again later');
+      setLoading(false);
       document
         .querySelector('.link__input')
         .classList.remove('link__input-error');
@@ -43,9 +56,17 @@ const LinkInput = () => {
           />
           <p className="link__error">{error}</p>
         </div>
-        <Button title="Shorten It!" />
+        <Button title={`${loading ? 'Loading...' : 'Shorten It!'}`} />
       </form>
-      <LinkOutput copyState={copyState} action={handleCopy} />
+      {data.map((item, index) => (
+        <LinkOutput
+          key={index}
+          hashid={item.hashid}
+          url={item.url}
+          copyState={copyState}
+          action={handleCopy}
+        />
+      ))}
     </section>
   );
 };
