@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { fetchFromStorage } from '../../util';
 import LinkOutput from '../LinkOutput';
 import Button from '../Button';
@@ -24,19 +23,24 @@ const LinkInput = () => {
       return;
     }
     try {
+      setError('');
       setLoading(true);
-      const { data: result } = await axios.post('https://rel.ink/api/links/', {
-        url: link,
+      const response = await fetch('https://rel.ink/api/links/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url: link }),
       });
+      const result = await response.json();
+      if (!response.ok) setError(result.url);
+
       localStorage.setItem(result.hashid, JSON.stringify(result));
       setData([result, ...data]);
       setLoading(false);
     } catch (error) {
       setError('Error shortening link. Try again later');
       setLoading(false);
-      document
-        .querySelector('.link__input')
-        .classList.remove('link__input-error');
     }
   };
 
