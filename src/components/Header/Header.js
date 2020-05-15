@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MdMenu } from 'react-icons/md';
 import LinkButton from '../LinkButton';
 import Logo from '../../assets/images/logo.svg';
 import './Header.scss';
@@ -22,7 +21,7 @@ const Header = () => {
         <img src={Logo} alt="Shortly Logo" />
       </a>
       <button className="header__menu__button" onClick={handleClick}>
-        <MdMenu size="3rem" color="hsl(257, 7%, 63%)" />
+        &#9776;
       </button>
 
       <nav className="header__navigation">
@@ -54,7 +53,7 @@ const Header = () => {
             </a>
           </li>
           <li className="u-header-top signup">
-            <LinkButton title="Sign up" />
+            <LinkButton title="Sign up" prop="btn-signup" />
           </li>
         </ul>
       </nav>

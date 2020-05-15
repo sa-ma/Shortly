@@ -33,7 +33,10 @@ const LinkInput = () => {
         body: JSON.stringify({ url: link }),
       });
       const result = await response.json();
-      if (!response.ok) setError(result.url);
+      if (!response.ok) {
+        setError(result.url);
+        return;
+      }
 
       localStorage.setItem(result.hashid, JSON.stringify(result));
       setData([result, ...data]);

@@ -21,6 +21,11 @@
     background-color: transparent;
     border: 0;
     cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: $color-grayish-violet;
+    padding: 0 1rem;
+    outline-color: $color-dark-violet;
     @include lg {
       display: none;
     }
@@ -51,6 +56,7 @@
         background-color: transparent;
         padding: 0;
         margin: 0;
+        margin-top: 0.5rem;
         margin-left: 3rem;
         justify-content: flex-start;
         border-radius: 0;
