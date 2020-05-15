@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { fetchFromStorage } from '../../util';
 import LinkOutput from '../LinkOutput';
 import Button from '../Button';
 import './LinkInput.scss';
@@ -10,6 +11,11 @@ const LinkInput = () => {
   const [loading, setLoading] = useState(null);
   const [data, setData] = useState([]);
 
+  useEffect(() => {
+    const [...items] = fetchFromStorage();
+    setData(items);
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!link) {
@@ -19,10 +25,11 @@ const LinkInput = () => {
     }
     try {
       setLoading(true);
-      const result = await axios.post('https://rel.ink/api/links/', {
+      const { data: result } = await axios.post('https://rel.ink/api/links/', {
         url: link,
       });
-      setData([result.data, ...data]);
+      localStorage.setItem(result.hashid, JSON.stringify(result));
+      setData([result, ...data]);
       setLoading(false);
     } catch (error) {
       setError('Error shortening link. Try again later');

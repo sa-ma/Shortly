@@ -1,3 +1,4 @@
 import { copyToClipboard } from './copyToClipboard';
+import { fetchFromStorage } from './fetchFromStorage';
 
-export { copyToClipboard };
+export { copyToClipboard, fetchFromStorage };
