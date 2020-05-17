@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import LinkButton from '../LinkButton';
 import Logo from '../../assets/images/logo.svg';
 import './Header.scss';
@@ -48,12 +49,12 @@ const Header = () => {
             </a>
           </li>
           <li className="header__navigation__menu__link header-login u-pull-right">
-            <a href="#pricing" className="header__navigation__menu__link__item">
+            <Link to="/login" className="header__navigation__menu__link__item">
               Login
-            </a>
+            </Link>
           </li>
           <li className="u-header-top signup">
-            <LinkButton title="Sign up" prop="btn-signup" />
+            <LinkButton title="Sign up" location="/signup" prop="btn-signup" />
           </li>
         </ul>
       </nav>

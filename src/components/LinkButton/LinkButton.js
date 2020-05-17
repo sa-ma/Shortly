@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './LinkButton.scss';
 
-const LinkButton = ({ title, prop }) => {
+const LinkButton = ({ title, location, prop }) => {
   return (
-    <a href="#action" className={`link-btn ${prop ? prop : ''}`}>
+    <Link to={location || '/signup'} className={`link-btn ${prop ? prop : ''}`}>
       {title}
-    </a>
+    </Link>
   );
 };
 

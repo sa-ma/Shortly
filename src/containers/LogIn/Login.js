@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.svg';
 import Button from '../../components/Button';
 import './Login.scss';
@@ -15,7 +16,9 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login__logo">
-        <img src={Logo} alt="Shortly Logo" />
+        <Link to="/">
+          <img src={Logo} alt="Shortly Logo" />
+        </Link>
       </div>
 
       <form action="" onSubmit={handleSubmit} className="login__form">
