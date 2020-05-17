@@ -10,10 +10,10 @@ const LinkOutput = ({ hashid, url }) => {
   const handleCopy = (event) => {
     event.preventDefault();
     copyToClipboard(shortlink, setCopyState);
-    document.querySelector('.btn-copy').classList.add('btn-copied');
+    event.target.classList.add('btn-copied');
     setTimeout(() => {
       setCopyState(false);
-      document.querySelector('.btn-copy').classList.remove('btn-copied');
+      document.querySelector('.btn-copied').classList.remove('btn-copied');
     }, 3000);
   };
 

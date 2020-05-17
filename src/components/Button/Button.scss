@@ -4,7 +4,6 @@
   color: white;
   font-weight: 700;
   margin-top: 2rem;
-  padding: 2rem;
   border: 1px solid transparent;
   border-radius: 8px;
   background-color: $color-cyan;
@@ -22,6 +21,12 @@
     background-color: darken($color-cyan, 5%);
     transform: translateY(3px);
   }
+  &-shorten {
+    padding: 2rem;
+    @include lg {
+      padding: 1rem 2rem;
+    }
+  }
   &-signup {
     padding: 1.5rem;
     @include lg {
@@ -31,15 +36,25 @@
   }
   &-copy {
     margin: 1rem 2rem;
+    padding: 2rem;
     @include lg {
       margin: 0;
+      padding: 0 3rem;
     }
   }
   &-copied {
     background-color: $color-dark-violet !important;
+    padding: 2rem;
     margin: 1rem 2rem;
     @include lg {
       margin: 0;
+      padding: 0 3rem;
+    }
+  }
+  &-login {
+    padding: 1rem;
+    @include lg {
+      margin-left: 0;
     }
   }
 }

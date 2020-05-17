@@ -60,7 +60,10 @@ const LinkInput = () => {
           />
           <p className="link__error">{error}</p>
         </div>
-        <Button title={`${loading ? 'Loading...' : 'Shorten It!'}`} />
+        <Button
+          title={`${loading ? 'Loading...' : 'Shorten It!'}`}
+          variant="btn-shorten"
+        />
       </form>
       {data.map((item, index) => (
         <LinkOutput key={index} hashid={item.hashid} url={item.url} />

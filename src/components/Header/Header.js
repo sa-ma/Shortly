@@ -47,7 +47,7 @@ const Header = () => {
               Resources
             </a>
           </li>
-          <li className="header__navigation__menu__link login u-pull-right">
+          <li className="header__navigation__menu__link header-login u-pull-right">
             <a href="#pricing" className="header__navigation__menu__link__item">
               Login
             </a>

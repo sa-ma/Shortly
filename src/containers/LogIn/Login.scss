@@ -1,0 +1,42 @@
+@import '../../assets/sass/main';
+
+.login {
+  margin: 10rem auto 0;
+  &::before {
+    content: '';
+    border: 0;
+  }
+  &__logo {
+    width: fit-content;
+    margin: 0 auto;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    margin-top: 8rem;
+    @include lg {
+      margin: 8rem 30rem;
+      padding: 2rem 10rem;
+    }
+    &__label {
+      font-weight: 500;
+      font-size: 2.2rem;
+      text-align: center;
+      color: $color-dark-violet;
+    }
+    &__input {
+      padding: 1.5rem;
+      color: $color-very-dark-violet;
+      margin-top: 1rem;
+      border-radius: 6px;
+      border: 1px solid $color-dark-violet;
+      &:focus {
+        outline-color: $color-grayish-violet;
+      }
+      @include lg {
+        margin: 1rem 0 2rem;
+      }
+    }
+  }
+}
