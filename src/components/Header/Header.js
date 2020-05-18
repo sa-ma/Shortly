@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { logoutUser } from '../../services';
 import LinkButton from '../LinkButton';
+import Button from '../Button';
 import Logo from '../../assets/images/logo.svg';
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ status }) => {
+  console.log(status);
+
   const [open, setOpen] = useState(false);
+  const history = useHistory();
 
   const handleClick = () => {
     setOpen(!open);
@@ -14,6 +19,16 @@ const Header = () => {
       menu.style.display = 'block';
     } else {
       menu.style.display = 'none';
+    }
+  };
+
+  const handleSignOut = async (event) => {
+    event.preventDefault();
+    try {
+      await logoutUser();
+      history.replace('/');
+    } catch (error) {
+      console.error(error);
     }
   };
   return (
@@ -48,14 +63,33 @@ const Header = () => {
               Resources
             </a>
           </li>
-          <li className="header__navigation__menu__link header-login u-pull-right">
-            <Link to="/login" className="header__navigation__menu__link__item">
-              Login
-            </Link>
-          </li>
-          <li className="u-header-top signup">
-            <LinkButton title="Sign up" location="/signup" prop="btn-signup" />
-          </li>
+          {status ? (
+            <li className="u-header-top signup u-pull-right">
+              <Button
+                title="Sign out"
+                action={handleSignOut}
+                variant="btn-signup"
+              />
+            </li>
+          ) : (
+            <>
+              <li className="header__navigation__menu__link header-login u-pull-right">
+                <Link
+                  to="/login"
+                  className="header__navigation__menu__link__item"
+                >
+                  Login
+                </Link>
+              </li>
+              <li className="u-header-top signup">
+                <LinkButton
+                  title="Sign up"
+                  location="/signup"
+                  prop="btn-signup"
+                />
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>

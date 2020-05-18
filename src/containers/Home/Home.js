@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import UserContext from '../../context/UserContext';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import LinkInput from '../../components/LinkInput';
@@ -7,11 +8,12 @@ import Cta from '../../components/Cta';
 import Footer from '../../components/Footer';
 
 const Home = () => {
+  const user = useContext(UserContext);
   return (
     <React.Fragment>
-      <Header />
+      <Header status={user.isLoggedIn} />
       <Hero />
-      <LinkInput />
+      <LinkInput status={user.isLoggedIn} />
       <Blurb />
       <Cta />
       <Footer />
