@@ -48,14 +48,14 @@ const LinkInput = () => {
   };
 
   return (
-    <section className="link-container">
+    <div className="link-container">
       <form className="link" onSubmit={handleSubmit}>
         <div className="link__group">
           <label htmlFor="link" aria-hidden="true">
             Shorten Link
           </label>
           <input
-            name="link"
+            id="link"
             aria-label="short link"
             type="text"
             value={link}

@@ -27,7 +27,7 @@ const Login = () => {
         </label>
         <input
           type="text"
-          name="email"
+          id="email"
           aria-label="email"
           className="login__form__input"
           value={email}
