@@ -56,6 +56,7 @@ const LinkInput = () => {
           </label>
           <input
             name="link"
+            aria-label="short link"
             type="text"
             value={link}
             onChange={(event) => setLink(event.target.value)}

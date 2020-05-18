@@ -36,13 +36,16 @@ const Header = () => {
             </a>
           </li>
           <li className="header__navigation__menu__link">
-            <a href="#pricing" className="header__navigation__menu__link__item">
+            <a
+              href="#features"
+              className="header__navigation__menu__link__item"
+            >
               Pricing
             </a>
           </li>
           <li className="header__navigation__menu__link">
             <a
-              href="#resources"
+              href="#features"
               className="header__navigation__menu__link__item"
             >
               Resources

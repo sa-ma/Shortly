@@ -6,7 +6,7 @@ import './Blurb.scss';
 
 const Blurb = () => {
   return (
-    <div className="blurb">
+    <div className="blurb" id="features">
       <h2 className="blurb__title">Advanced Statistics</h2>
       <p className="blurb__subtitle">
         Track how your links are performing across the web with our advanced

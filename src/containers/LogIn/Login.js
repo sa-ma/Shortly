@@ -27,6 +27,8 @@ const Login = () => {
         </label>
         <input
           type="text"
+          name="email"
+          aria-label="email"
           className="login__form__input"
           value={email}
           onChange={handleChange}
