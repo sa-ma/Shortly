@@ -51,7 +51,11 @@ const LinkInput = () => {
     <section className="link-container">
       <form className="link" onSubmit={handleSubmit}>
         <div className="link__group">
+          <label htmlFor="link" aria-hidden="true">
+            Shorten Link
+          </label>
           <input
+            name="link"
             type="text"
             value={link}
             onChange={(event) => setLink(event.target.value)}

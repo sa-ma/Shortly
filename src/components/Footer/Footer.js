@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="grid">
         <div className="grid-item grid-item-1">
-          <a href="#a">
+          <a href="/">
             <svg xmlns="http://www.w3.org/2000/svg" width="121" height="33">
               <path
                 fill="#fff"

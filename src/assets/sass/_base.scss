@@ -108,3 +108,7 @@ body {
     margin-top: -1rem;
   }
 }
+
+label[aria-hidden='true'] {
+  display: none;
+}
