@@ -73,7 +73,7 @@ const LinkInput = () => {
       {data.map((item, index) => (
         <LinkOutput key={index} hashid={item.hashid} url={item.url} />
       ))}
-    </section>
+    </div>
   );
 };
 
