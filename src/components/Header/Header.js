@@ -7,7 +7,6 @@ import './Header.scss';
 
 const Header = ({ status, handleSignOut }) => {
   const [open, setOpen] = useState(false);
-  console.log(status);
 
   const handleClick = () => {
     setOpen(!open);

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import UserContext from '../../context/UserContext';
 import { fetchFromStorage } from '../../util';
 import LinkOutput from '../LinkOutput';
 import Button from '../Button';
 import './LinkInput.scss';
 
 const LinkInput = () => {
+  const isLoggedIn = useContext(UserContext);
   const [link, setLink] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
@@ -19,6 +21,11 @@ const LinkInput = () => {
     event.preventDefault();
     if (!link) {
       setError('Please add a link');
+      document.querySelector('.link__input').classList.add('link__input-error');
+      return;
+    }
+    if (data.length >= 5 && isLoggedIn === false) {
+      setError('Please login to shorten more links');
       document.querySelector('.link__input').classList.add('link__input-error');
       return;
     }
