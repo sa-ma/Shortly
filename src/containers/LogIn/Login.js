@@ -5,7 +5,7 @@ import Logo from '../../assets/images/logo.svg';
 import Button from '../../components/Button';
 import './Login.scss';
 
-const Login = () => {
+const Login = ({ setStatus }) => {
   const [loading, setLoading] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState();
@@ -19,7 +19,7 @@ const Login = () => {
     setError('');
     setLoading(true);
     try {
-      await loginUser(email);
+      await loginUser(email, setStatus);
       history.replace('/');
     } catch (error) {
       setError('Error sending link. Please refresh the page.');
@@ -38,7 +38,9 @@ const Login = () => {
           Email me a secure login
         </label>
         <input
-          type="email"
+          type="text"
+          id="email"
+          aria-label="email"
           className="login__form__input"
           value={email}
           onChange={handleChange}

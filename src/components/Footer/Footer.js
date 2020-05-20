@@ -7,10 +7,10 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="grid">
         <div className="grid-item grid-item-1">
-          <a href="#a">
+          <a href="#top">
             <svg xmlns="http://www.w3.org/2000/svg" width="121" height="33">
               <path
                 fill="#fff"

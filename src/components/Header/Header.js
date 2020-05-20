@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { logoutUser } from '../../services';
+import { Link } from 'react-router-dom';
 import LinkButton from '../LinkButton';
 import Button from '../Button';
 import Logo from '../../assets/images/logo.svg';
 import './Header.scss';
 
-const Header = ({ status }) => {
-  console.log(status);
-
+const Header = ({ status, handleSignOut }) => {
   const [open, setOpen] = useState(false);
-  const history = useHistory();
+  console.log(status);
 
   const handleClick = () => {
     setOpen(!open);
@@ -22,15 +19,6 @@ const Header = ({ status }) => {
     }
   };
 
-  const handleSignOut = async (event) => {
-    event.preventDefault();
-    try {
-      await logoutUser();
-      history.replace('/');
-    } catch (error) {
-      console.error(error);
-    }
-  };
   return (
     <header className="header" id="top">
       <a href="#top" className="header__logo">
@@ -51,13 +39,16 @@ const Header = ({ status }) => {
             </a>
           </li>
           <li className="header__navigation__menu__link">
-            <a href="#pricing" className="header__navigation__menu__link__item">
+            <a
+              href="#features"
+              className="header__navigation__menu__link__item"
+            >
               Pricing
             </a>
           </li>
           <li className="header__navigation__menu__link">
             <a
-              href="#resources"
+              href="#features"
               className="header__navigation__menu__link__item"
             >
               Resources

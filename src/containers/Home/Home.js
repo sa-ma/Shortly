@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { logoutUser } from '../../services';
 import UserContext from '../../context/UserContext';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
@@ -7,13 +8,18 @@ import Blurb from '../../components/Blurb';
 import Cta from '../../components/Cta';
 import Footer from '../../components/Footer';
 
-const Home = () => {
-  const user = useContext(UserContext);
+const Home = ({ setStatus }) => {
+  const isLoggedIn = useContext(UserContext);
+  const handleSignOut = async (event) => {
+    event.preventDefault();
+    await logoutUser(setStatus);
+  };
+
   return (
     <React.Fragment>
-      <Header status={user.isLoggedIn} />
+      <Header status={isLoggedIn} handleSignOut={handleSignOut} />
       <Hero />
-      <LinkInput status={user.isLoggedIn} />
+      <LinkInput status={isLoggedIn} />
       <Blurb />
       <Cta />
       <Footer />

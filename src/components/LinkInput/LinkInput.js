@@ -48,10 +48,15 @@ const LinkInput = () => {
   };
 
   return (
-    <section className="link-container">
+    <div className="link-container">
       <form className="link" onSubmit={handleSubmit}>
         <div className="link__group">
+          <label htmlFor="link" aria-hidden="true">
+            Shorten Link
+          </label>
           <input
+            id="link"
+            aria-label="short link"
             type="text"
             value={link}
             onChange={(event) => setLink(event.target.value)}
@@ -68,7 +73,7 @@ const LinkInput = () => {
       {data.map((item, index) => (
         <LinkOutput key={index} hashid={item.hashid} url={item.url} />
       ))}
-    </section>
+    </div>
   );
 };
 

@@ -5,16 +5,21 @@ const magic = new Magic(process.env.REACT_APP_PK_KEY);
 export const checkUser = async (cb) => {
   const isLoggedIn = await magic.user.isLoggedIn();
   if (isLoggedIn) {
-    const user = await magic.user.getMetadata();
-    return cb({ isLoggedIn: true, email: user.email });
+    return cb(true);
   }
-  return cb({ isLoggedIn: false });
+  return cb(false);
 };
 
-export const loginUser = async (email) => {
-  await magic.auth.loginWithMagicLink({ email });
+export const loginUser = async (email, cb) => {
+  try {
+    await magic.auth.loginWithMagicLink({ email });
+    return cb(true);
+  } catch (error) {
+    return cb(false);
+  }
 };
 
-export const logoutUser = async () => {
+export const logoutUser = async (cb) => {
   await magic.user.logout();
+  return cb(false);
 };
