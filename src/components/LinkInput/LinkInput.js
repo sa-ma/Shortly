@@ -24,7 +24,7 @@ const LinkInput = () => {
       document.querySelector('.link__input').classList.add('link__input-error');
       return;
     }
-    if (data.length >= 5 && isLoggedIn === false) {
+    if (data.length >= 3 && isLoggedIn === false) {
       setError('Please login to shorten more links');
       document.querySelector('.link__input').classList.add('link__input-error');
       return;

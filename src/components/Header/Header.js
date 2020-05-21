@@ -58,7 +58,7 @@ const Header = ({ status, handleSignOut }) => {
               <Button
                 title="Sign out"
                 action={handleSignOut}
-                variant="btn-signup"
+                variant="btn-signout"
               />
             </li>
           ) : (
