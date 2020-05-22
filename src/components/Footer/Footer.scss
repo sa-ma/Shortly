@@ -6,6 +6,13 @@
   @include lg {
     padding: 3rem 10rem;
   }
+  &__logo {
+    display: block;
+    text-align: center;
+    @include lg {
+      text-align: left;
+    }
+  }
   &__title {
     color: white;
     text-align: center;
@@ -25,7 +32,7 @@
       text-align: left;
     }
   }
-  a {
+  &__link {
     &:link,
     &:visited {
       color: $color-gray;
@@ -35,6 +42,27 @@
     }
     &:hover {
       text-decoration: underline;
+    }
+  }
+  &__credits {
+    font-size: 1.4rem;
+    color: $color-gray;
+    text-align: center;
+    @include lg {
+      text-align: left;
+    }
+    &__link {
+      &:link,
+      &:visited {
+        color: $color-gray;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-decoration: underline;
+        transition: color 0.5s;
+      }
+      &:hover {
+        color: $color-dark-violet;
+      }
     }
   }
 }

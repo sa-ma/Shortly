@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="footer" id="footer">
       <div className="grid">
         <div className="grid-item grid-item-1">
-          <a href="#top">
+          <a href="#top" className="footer__logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="121" height="33">
               <path
                 fill="#fff"
@@ -18,18 +18,40 @@ const Footer = () => {
               />
             </svg>
           </a>
+          <p class="footer__credits">
+            Challenge by{' '}
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="footer__credits__link"
+            >
+              Frontend Mentor
+            </a>
+            . Coded by{' '}
+            <a href="https://samailabala.com" class="footer__credits__link">
+              Samaila Bala
+            </a>
+            .
+          </p>
         </div>
         <div className="grid-item">
           <div className="footer__title">Features</div>
           <ul>
             <li>
-              <a href="#footer">Link Shortening</a>
+              <a href="#footer" className="footer__link">
+                Link Shortening
+              </a>
             </li>
             <li>
-              <a href="#footer">Branded Links</a>
+              <a href="#footer" className="footer__link">
+                Branded Links
+              </a>
             </li>
             <li>
-              <a href="#footer">Analytics</a>
+              <a href="#footer" className="footer__link">
+                Analytics
+              </a>
             </li>
           </ul>
         </div>
@@ -38,13 +60,19 @@ const Footer = () => {
           <div className="footer__title">Resources</div>
           <ul>
             <li>
-              <a href="#footer">Blog</a>
+              <a href="#footer" className="footer__link">
+                Blog
+              </a>
             </li>
             <li>
-              <a href="#footer">Developers</a>
+              <a href="#footer" className="footer__link">
+                Developers
+              </a>
             </li>
             <li>
-              <a href="#footer">Support</a>
+              <a href="#footer" className="footer__link">
+                Support
+              </a>
             </li>
           </ul>
         </div>
@@ -53,16 +81,24 @@ const Footer = () => {
           <div className="footer__title">Company</div>
           <ul>
             <li>
-              <a href="#footer">About</a>
+              <a href="#footer" className="footer__link">
+                About
+              </a>
             </li>
             <li>
-              <a href="#footer">Our Team</a>
+              <a href="#footer" className="footer__link">
+                Our Team
+              </a>
             </li>
             <li>
-              <a href="#footer">Careers</a>
+              <a href="#footer" className="footer__link">
+                Careers
+              </a>
             </li>
             <li>
-              <a href="#footer">Contact</a>
+              <a href="#footer" className="footer__link">
+                Contact
+              </a>
             </li>
           </ul>
         </div>
@@ -70,22 +106,22 @@ const Footer = () => {
         <div className="grid-item grid-item-4">
           <ul className="social-menu">
             <li className="social-menu__item">
-              <a href="#footer">
+              <a href="#footer" className="footer__link">
                 <img src={Facebook} alt="Facebook Connect" />
               </a>
             </li>
             <li className="social-menu__item">
-              <a href="#footer">
+              <a href="#footer" className="footer__link">
                 <img src={Twitter} alt="Twitter Connect" />
               </a>
             </li>
             <li className="social-menu__item">
-              <a href="#footer">
+              <a href="#footer" className="footer__link">
                 <img src={Pinterest} alt="Pinterest Connect" />
               </a>
             </li>
             <li className="social-menu__item">
-              <a href="#footer">
+              <a href="#footer" className="footer__link">
                 <img src={Instagram} alt="Instagram Connect" />
               </a>
             </li>
