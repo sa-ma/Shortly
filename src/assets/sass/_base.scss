@@ -57,6 +57,11 @@ body {
   font-size: 1.8rem;
 }
 
+.u-content-container{
+  max-width: 1920px;
+  margin: auto;
+}
+
 .u-header-top {
   margin-top: 2rem;
   @include lg {

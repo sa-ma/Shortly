@@ -56,30 +56,32 @@ const LinkInput = () => {
 
   return (
     <div className="link-container">
-      <form className="link" onSubmit={handleSubmit}>
-        <div className="link__group">
-          <label htmlFor="link" aria-hidden="true">
-            Shorten Link
+      <div className="u-content-container">
+        <form className="link" onSubmit={handleSubmit}>
+          <div className="link__group">
+            <label htmlFor="link" aria-hidden="true">
+              Shorten Link
           </label>
-          <input
-            id="link"
-            aria-label="short link"
-            type="text"
-            value={link}
-            onChange={(event) => setLink(event.target.value)}
-            className="link__input"
-            placeholder="Shorten a link here"
+            <input
+              id="link"
+              aria-label="short link"
+              type="text"
+              value={link}
+              onChange={(event) => setLink(event.target.value)}
+              className="link__input"
+              placeholder="Shorten a link here"
+            />
+            <p className="link__error">{error}</p>
+          </div>
+          <Button
+            title={`${loading ? 'Loading...' : 'Shorten It!'}`}
+            variant="btn-shorten"
           />
-          <p className="link__error">{error}</p>
-        </div>
-        <Button
-          title={`${loading ? 'Loading...' : 'Shorten It!'}`}
-          variant="btn-shorten"
-        />
-      </form>
-      {data.map((item, index) => (
-        <LinkOutput key={index} hashid={item.hashid} url={item.url} />
-      ))}
+        </form>
+        {data.map((item, index) => (
+          <LinkOutput key={index} hashid={item.hashid} url={item.url} />
+        ))}
+      </div>
     </div>
   );
 };
