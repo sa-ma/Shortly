@@ -19,18 +19,18 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <p class="footer__credits">
+            <p className="footer__credits">
               Challenge by{' '}
               <a
                 href="https://www.frontendmentor.io?ref=challenge"
                 rel="noopener noreferrer"
                 target="_blank"
-                class="footer__credits__link"
+                className="footer__credits__link"
               >
                 Frontend Mentor
             </a>
             . Coded by{' '}
-              <a href="https://samailabala.com" class="footer__credits__link">
+              <a href="https://samailabala.com" className="footer__credits__link">
                 Samaila Bala
             </a>
             .

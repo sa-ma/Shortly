@@ -1,7 +1,8 @@
 @import '../../assets/sass/main';
 
 .login {
-  margin: 10rem auto 0;
+  margin: 30rem auto 0;
+  max-width: 1440px;
   &::before {
     content: '';
     border: 0;

@@ -14,7 +14,9 @@ const LinkInput = () => {
 
   useEffect(() => {
     const [...items] = fetchFromStorage();
-    setData(items);
+    if (items) {
+      setData(items);
+    }
   }, []);
 
   const handleSubmit = async (event) => {

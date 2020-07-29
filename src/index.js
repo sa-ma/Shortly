@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Tracker from '@asayerio/tracker';
 import './assets/sass/_base.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+
+const tracker = new Tracker({
+  projectID: 8794100460112674
+});
+tracker.start();
 
 ReactDOM.render(
   <React.StrictMode>
