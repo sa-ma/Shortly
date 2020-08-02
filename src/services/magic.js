@@ -2,12 +2,12 @@ import { Magic } from 'magic-sdk';
 
 const magic = new Magic(process.env.REACT_APP_PK_KEY);
 
-export const checkUser = async (cb) => {
+export const checkUser = async (cb, ref) => {
   const isLoggedIn = await magic.user.isLoggedIn();
-  if (isLoggedIn) {
+  if (isLoggedIn && ref.current) {
     return cb(true);
   }
-  return cb(false);
+  return ref.current && cb(false);
 };
 
 export const loginUser = async (email, cb) => {

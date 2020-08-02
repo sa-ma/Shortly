@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import UserContext from '../../context/UserContext';
-import { fetchFromStorage } from '../../util';
 import LinkOutput from '../LinkOutput';
 import Button from '../Button';
 import './LinkInput.scss';
@@ -13,9 +12,9 @@ const LinkInput = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const [...items] = fetchFromStorage();
+    const items = localStorage.getItem('links');
     if (items) {
-      setData(items);
+      setData(JSON.parse(items));
     }
   }, []);
 
@@ -46,16 +45,15 @@ const LinkInput = () => {
         setError(result.url);
         return;
       }
-
-      localStorage.setItem(result.hashid, JSON.stringify(result));
-      setData([result, ...data]);
+      const shortlinks = [...data, { hashid: result.hashid, url: result.url }];
+      localStorage.setItem('links', JSON.stringify(shortlinks));
+      setData(shortlinks);
       setLoading(false);
     } catch (error) {
       setError('Error shortening link. Try again later');
       setLoading(false);
     }
   };
-
   return (
     <div className="link-container">
       <div className="u-content-container">
@@ -80,7 +78,7 @@ const LinkInput = () => {
             variant="btn-shorten"
           />
         </form>
-        {data.map((item, index) => (
+        {data && data.map((item, index) => (
           <LinkOutput key={index} hashid={item.hashid} url={item.url} />
         ))}
       </div>

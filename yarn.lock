@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@asayerio/tracker@^5.5.7":
-  version "5.5.7"
-  resolved "https://registry.yarnpkg.com/@asayerio/tracker/-/tracker-5.5.7.tgz#862b46471e04f41a614204903c4ff27f1a3c4593"
-  integrity sha512-b6lnZB4PRY5IIvw+DteaQEit3uL24moqEoScwAkoT6nUwHi1NLfqbAlOgib8VPOwyhItukYFKRkljrcF/OM2Ww==
-
 "@babel/code-frame@7.8.3", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
