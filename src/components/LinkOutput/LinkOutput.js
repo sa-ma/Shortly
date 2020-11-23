@@ -3,9 +3,8 @@ import { copyToClipboard } from '../../util';
 import Button from '../Button';
 import './LinkOutput.scss';
 
-const LinkOutput = ({ hashid, url }) => {
+const LinkOutput = ({ shortlink, url }) => {
   const [copyState, setCopyState] = useState(false);
-  const shortlink = `https://rel.ink/${hashid}`;
 
   const handleCopy = (event) => {
     event.preventDefault();

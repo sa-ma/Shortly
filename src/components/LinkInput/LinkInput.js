@@ -33,19 +33,22 @@ const LinkInput = () => {
     try {
       setError('');
       setLoading(true);
-      const response = await fetch('https://rel.ink/api/links/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url: link }),
-      });
-      const result = await response.json();
-      if (!response.ok) {
-        setError(result.url);
+      const response = await fetch(
+        `https://api.shrtco.de/v2/shorten?url=${link}`
+      );
+      const { ok, result } = await response.json();
+      if (!ok) {
+        setError('Error shortening link. Please try again later.');
         return;
       }
-      const shortlinks = [...data, { hashid: result.hashid, url: result.url }];
+      const shortlinks = [
+        ...data,
+        {
+          hashid: result.code,
+          short_link: result.full_short_link,
+          url: result.original_link,
+        },
+      ];
       localStorage.setItem('links', JSON.stringify(shortlinks));
       setData(shortlinks);
       setLoading(false);
@@ -61,7 +64,7 @@ const LinkInput = () => {
           <div className="link__group">
             <label htmlFor="link" aria-hidden="true">
               Shorten Link
-          </label>
+            </label>
             <input
               id="link"
               aria-label="short link"
@@ -78,9 +81,14 @@ const LinkInput = () => {
             variant="btn-shorten"
           />
         </form>
-        {data && data.map((item, index) => (
-          <LinkOutput key={index} hashid={item.hashid} url={item.url} />
-        ))}
+        {data &&
+          data.map((item, index) => (
+            <LinkOutput
+              key={index}
+              shortlink={item.short_link}
+              url={item.url}
+            />
+          ))}
       </div>
     </div>
   );
